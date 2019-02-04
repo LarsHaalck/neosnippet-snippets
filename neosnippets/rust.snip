@@ -3,53 +3,61 @@
 snippet     fn
 abbr        fn () {}
 options     head
-    fn ${1:#:func_name}(${2:#:args}) {
+    fn ${1:#:func_name}(${2:#:args})
+    {
         ${0:TARGET}
     }
 
 snippet     fn-
 abbr        fn () {}
 options     head
-    fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()} {
+    fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()}
+    {
         ${0:TARGET}
     }
 
 snippet     pubfn
 abbr        pubfn () {}
 options     head
-    pub fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()} {
+    pub fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()}
+    {
         ${0:TARGET}
     }
 
 snippet     test
 options     head
     #[test]
-    fn ${1:#:test_function_name}() {
+    fn ${1:#:test_function_name}()
+    {
         ${0:TARGET}
     }
 
 snippet     pubnew
 abbr        pub fn new() {}
 options     head
-    pub fn new(${1}) -> ${2:#:Name} {
+    pub fn new(${1}) -> ${2:#:Name}
+    {
         ${0:TARGET}
     }
 
 snippet     impl
 options     head
-    impl ${1} {
+    impl ${1}
+    {
         ${0:TARGET}
     }
 
 snippet     implfor
 options     head
-    impl ${1} for ${2} {
+    impl ${1} for ${2}
+    {
         ${0:TARGET}
     }
 
 snippet     trait
 options     head
-    trait ${1} {
+    trait ${1}
+    {
         ${0:TARGET}
     }
 
@@ -60,7 +68,8 @@ snippet     macro
 
 snippet     bfl
 abbr        bitflags!
-    bitflags! {
+    bitflags!
+    {
         ${0:TARGET}
     }
 
@@ -97,7 +106,8 @@ options     head
 
 snippet     mod
 options     head
-    mod ${1:#:mod_name} {
+    mod ${1:#:mod_name}
+    {
         ${0:TARGET}
     }
 
@@ -106,36 +116,45 @@ snippet     let
 
 snippet     if
 abbr        if {}
-    if ${1:#:condition} {
+    if ${1:#:condition}
+    {
         ${0:TARGET}
     }
 
 snippet else
-    else {
+    else
+    {
         ${0:TARGET}
     }
 
 snippet elseif
-    } else if (${1:#:condition}) {
+    }
+    else if (${1:#:condition})
+    {
         ${0:TARGET}
     }
 
 snippet     ifelse
 abbr        if () {} else {}
-    if ${1:#:condition} {
+    if ${1:#:condition}
+    {
         ${2:TARGET}
-    } else {
+    }
+    else
+    {
         ${3}
     }
 
 snippet     forin
 abbr        forin  {}
-    for ${1} in ${2} {
+    for ${1} in ${2}
+    {
         ${0:TARGET}
     }
 
 snippet     match
-    match ${1:TARGET} {
+    match ${1:TARGET}
+    {
         ${2:#:pattern} => ${3:#expr},${4}
     }
 
@@ -147,20 +166,23 @@ alias       case
 
 snippet     struct
 options     head
-    struct ${1} {
+    struct ${1}
+    {
         ${0:TARGET}
     }
 
 snippet     pubstruct
 abbr        pub struct
 options     head
-    pub struct ${1} {
+    pub struct ${1}
+    {
         ${0:TARGET}
     }
 
 snippet     enum
 options     head
-    enum ${1} {
+    enum ${1}
+    {
         ${0:TARGET}
     }
 
