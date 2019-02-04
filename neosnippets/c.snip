@@ -81,17 +81,17 @@ options     head
 abbr        switch () {}
 	switch (${1:#:var})
     {
-		case ${2:#:val}:
-			${0:TARGET}
-			break;
-	}
+        case ${2:#:val}:
+            ${0:TARGET}
+            break;
+    }
 
 snippet     case
 options     head
 abbr        case: break;
-	case ${1}:
-		${0}
-		break;
+    case ${1}:
+        ${0}
+        break;
 
 # Ternary conditional operator
 snippet conditional
@@ -136,11 +136,11 @@ abbr        enum {}
 # hard-tab is necessary; C indent doesn't support this.
 snippet     main
 options     head
-	int main(int argc, char const* argv[])
-	{
-		${0:TARGET}
-		return 0;
-	}
+    int main(int argc, char const* argv[])
+    {
+        ${0:TARGET}
+        return 0;
+    }
 
 snippet     helloworld
 options     head
@@ -186,7 +186,8 @@ alias       #ifndef
 abbr #ifndef ... #define ... #endif
     #ifndef $1
     #define ${1:#:SYMBOL}
-    #endif${0}
+    #endif // ${1}
+    ${0}
 
 # This snippet used the placeholder instead of a trailing space
 snippet     def
@@ -222,9 +223,9 @@ abbr    fprintf(..., "...\n", ...);
 
 snippet fopen
 abbr fopen("...", "...");
-	fopen("${1:PATH}", "${2:MODE}");
-	${0:TARGET}
-	fclose(${3:FD});
+    fopen("${1:PATH}", "${2:MODE}");
+    ${0:TARGET}
+    fclose(${3:FD});
 
 snippet fgets
 abbr    fgets(row, length, file);
@@ -248,20 +249,20 @@ abbr    memcpy(dest, src, nbytes)
 
 snippet malloc
 abbr    malloc(size)
-	($2 *)malloc(${1:N_MEMBERS} * sizeof(${2:TYPE}));
-	${0}
-	free(${3:MEM});
+    ($2 *)malloc(${1:N_MEMBERS} * sizeof(${2:TYPE}));
+    ${0}
+    free(${3:MEM});
 
 snippet calloc
 abbr    calloc(n, size)
-	($2 *)calloc(${1:N_MEMBERS}, sizeof(${2:TYPE}));
-	${0}
-	free(${3:MEM});
+    ($2 *)calloc(${1:N_MEMBERS}, sizeof(${2:TYPE}));
+    ${0}
+    free(${3:MEM});
 
 snippet realloc
 abbr    realloc(old, size)
-	($3 *)realloc(${1:OLD}, ${2:N_MEMBERS} * sizeof(${3:TYPE}));
-	${0}
+    ($3 *)realloc(${1:OLD}, ${2:N_MEMBERS} * sizeof(${3:TYPE}));
+    ${0}
 
 snippet seed_rand
     srand(time(NULL));
@@ -295,10 +296,10 @@ alias   generic, select
 snippet va_list
 options head
 abbr    va_start(va_list, last_arg); ... ; va_end()
-	va_list ${1:ap};
-	va_start($1, ${2:LAST_ARG});
-	${0}
-	va_end($1);
+    va_list ${1:ap};
+    va_start($1, ${2:LAST_ARG});
+    ${0}
+    va_end($1);
 # }}}
 
 # Comments {{{
