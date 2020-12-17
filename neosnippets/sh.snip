@@ -138,7 +138,7 @@ options		head
 	}
 
 	die() {
-	    local msg=$1
+	    local msg=\$1
 	    local code=${2-1} # default exit status 1
 	    msg "$msg"
 	    exit "$code"
@@ -159,7 +159,7 @@ options		head
 	            param="${2-}"
 	            shift
 	            ;;
-	        -?*) die "Unknown option: $1" ;;
+	        -?*) die "Unknown option: \$1" ;;
 	        *) break ;;
 	        esac
 	        shift
